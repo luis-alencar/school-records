@@ -20,6 +20,7 @@ public @Data class Empresa {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nome;
+	private String projeto;
 	
 	@OneToMany(mappedBy = "empresa")
 	private List<Aluno> aluno = new ArrayList<>();

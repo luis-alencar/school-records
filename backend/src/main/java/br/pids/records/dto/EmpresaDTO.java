@@ -11,9 +11,12 @@ public @Data class EmpresaDTO implements Serializable{
 	
 	private Long id;
 	private String nome;
+	private String projeto;
 	
 	public EmpresaDTO(Empresa entity) {
 		id = entity.getId();
 		nome = entity.getNome();
+		projeto = entity.getProjeto();
+		
 	}
 }
