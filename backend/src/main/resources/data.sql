@@ -12,5 +12,7 @@ INSERT INTO tb_aluno (email, nome, telefone,empresa_id_aluno) VALUES ('Alvaro@ue
 INSERT INTO tb_aluno (email, nome, telefone,empresa_id_aluno) VALUES ('Rainha@ueg.br', 'Elizabeth II',78789898,3);
 
 
-INSERT INTO TB_COMENTARIO (COMENTARIO, DATA, NOTA, TIPO, TITULO, EMPRESA_ID_COMENTARIO) VALUES ('EU SOU UM COMENTARIO','2021-10-10',10,'RESERVA','TESTE DE COMENTARIO',1);
+INSERT INTO TB_COMENTARIO (COMENTARIO, DATA, NOTA, TIPO, TITULO, EMPRESA_ID_COMENTARIO) VALUES ('EU SOU UM COMENTARIO','2021-10-10',10,10,'TESTE DE COMENTARIO',1);
+INSERT INTO tb_comentario (comentario,data,nota,tipo,titulo,empresa_id_comentario) VALUES ('Comentario teste','2021-10-02','10','10','titulo',2);
+
 */
