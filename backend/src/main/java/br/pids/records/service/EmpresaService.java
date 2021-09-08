@@ -28,6 +28,31 @@ public class EmpresaService {
 	public Empresa findById(Long id) {
 		Optional<Empresa> obj = repository.findById(id);
 		return obj.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado"));
-		}
+	}
+	
+	public Empresa insertEmpresa(Empresa obj) {
+		return repository.save(obj);
+	}
+	
+	public Empresa fromDTO(EmpresaDTO objDto) {
+		return new Empresa(objDto.getId(), objDto.getNome(), objDto.getProjeto());
+	}
+	
+	public void delete(Long id) {
+		findById(id);
+		repository.deleteById(id);
+	}
+	
+	public Empresa update(Empresa obj) {
+		Empresa newObj = repository.getById(obj.getId());
+		updateData(newObj, obj);
+		return repository.save(newObj);
+	}
+
+	private void updateData(Empresa newObj, Empresa obj) {
+		newObj.setNome(obj.getNome());
+		newObj.setProjeto(newObj.getProjeto());
+		
+	}
 
 }

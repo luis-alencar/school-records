@@ -10,10 +10,14 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "tb_comentario")
+@AllArgsConstructor
+@NoArgsConstructor
 public @Data class Comentario {
 	
 	@Id
@@ -24,6 +28,7 @@ public @Data class Comentario {
 	private String comentario;
 	private int nota;
 	private int tipo;
+	
 	
 	@ManyToOne
 	@JoinColumn(name ="empresa_id_comentario")

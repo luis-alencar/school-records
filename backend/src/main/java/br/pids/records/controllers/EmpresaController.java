@@ -1,13 +1,19 @@
 package br.pids.records.controllers;
 
+import java.net.URI;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import br.pids.records.dto.EmpresaDTO;
 import br.pids.records.model.Empresa;
@@ -30,5 +36,27 @@ public class EmpresaController {
 	public ResponseEntity<EmpresaDTO>findById(@PathVariable Long id){
 		Empresa obj = service.findById(id); 
 		return ResponseEntity.ok().body(new EmpresaDTO(obj));
+	}
+	
+	@PostMapping
+	public ResponseEntity<Void> save(@RequestBody EmpresaDTO objDto){
+		Empresa obj = service.fromDTO(objDto);
+		obj = service.insertEmpresa(obj);
+		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId()).toUri();
+		return ResponseEntity.created(uri).build();
+	}
+	
+	@DeleteMapping(value = "/{id}")
+	public ResponseEntity<Void>delete(@PathVariable Long id){
+		service.delete(id);
+		return ResponseEntity.noContent().build();
+	}
+	
+	@PutMapping(value = "/{id}")
+	public ResponseEntity<Void> update (@RequestBody EmpresaDTO objDto, @PathVariable Long id){
+		Empresa obj = service.fromDTO(objDto);
+		obj.setId(id);
+		obj = service.update(obj);
+		return ResponseEntity.noContent().build();
 	}
 }
