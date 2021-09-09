@@ -43,16 +43,16 @@ public class EmpresaService {
 		repository.deleteById(id);
 	}
 	
-	public Empresa update(Empresa obj) {
-		Empresa newObj = repository.getById(obj.getId());
-		updateData(newObj, obj);
-		return repository.save(newObj);
-	}
-
-	private void updateData(Empresa newObj, Empresa obj) {
-		newObj.setNome(obj.getNome());
-		newObj.setProjeto(newObj.getProjeto());
-		
+	@Transactional
+	public EmpresaDTO update(Long id, EmpresaDTO dto) {
+		try {
+		Empresa entity = repository.getOne(id);
+		entity.setNome(dto.getNome());
+		entity.setProjeto(dto.getProjeto());
+		return new EmpresaDTO(entity);
+		}catch (ObjectNotFoundException e) {
+			throw new ObjectNotFoundException("Objeto não encontrado");
+		}
 	}
 
 }

@@ -53,10 +53,8 @@ public class EmpresaController {
 	}
 	
 	@PutMapping(value = "/{id}")
-	public ResponseEntity<Void> update (@RequestBody EmpresaDTO objDto, @PathVariable Long id){
-		Empresa obj = service.fromDTO(objDto);
-		obj.setId(id);
-		obj = service.update(obj);
+	public ResponseEntity<EmpresaDTO> update (@PathVariable Long id, @RequestBody EmpresaDTO dto){
+		dto = service.update(id, dto);
 		return ResponseEntity.noContent().build();
 	}
 }

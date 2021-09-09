@@ -3,8 +3,12 @@ package br.pids.records.dto;
 import java.io.Serializable;
 
 import br.pids.records.model.Aluno;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@AllArgsConstructor
+@NoArgsConstructor
 public @Data class AlunoDTO implements Serializable{
 	
 	private static final long serialVersionUID = 1L;

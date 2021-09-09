@@ -4,8 +4,12 @@ import java.io.Serializable;
 import java.time.LocalDate;
 
 import br.pids.records.model.Comentario;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@AllArgsConstructor
+@NoArgsConstructor
 public @Data class ComentarioDTO implements Serializable{
 		
 	private static final long serialVersionUID = 1L;

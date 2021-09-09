@@ -21,4 +21,5 @@ public class ComentarioService {
 		Page<Comentario> result = repository.findAll(pageable);
 		return result.map(x -> new ComentarioDTO(x));
 	}
+	
 }
