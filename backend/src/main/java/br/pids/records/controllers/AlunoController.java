@@ -26,7 +26,6 @@ public class AlunoController {
 		return ResponseEntity.ok(list);
 	}
 	
-	
 	@GetMapping(path = "/{id}")
 	public ResponseEntity<AlunoDTO>findById(@PathVariable Long id){
 		Aluno obj = service.findById(id); 

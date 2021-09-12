@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import br.pids.records.dto.EmpresaDTO;
+import br.pids.records.model.Comentario;
 import br.pids.records.model.Empresa;
 import br.pids.records.service.EmpresaService;
 
@@ -56,5 +57,11 @@ public class EmpresaController {
 	public ResponseEntity<EmpresaDTO> update (@PathVariable Long id, @RequestBody EmpresaDTO dto){
 		dto = service.update(id, dto);
 		return ResponseEntity.noContent().build();
+	}
+	
+	@GetMapping(value="/{id}/comentarios")
+	public ResponseEntity<List<Comentario>>findComentarios(@PathVariable Long id){
+		Empresa obj = service.findById(id);
+		return ResponseEntity.ok().body(obj.getComentario());
 	}
 }

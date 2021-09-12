@@ -30,7 +30,8 @@ public class AlunoService {
 		return obj.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado"));
 	}
 	
-	public Aluno insert(Aluno obj) {
-		return repository.save(obj);
+	public void delete(Long id) {
+		findById(id);
+		repository.deleteById(id);
 	}
 }
