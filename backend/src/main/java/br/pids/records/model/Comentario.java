@@ -3,7 +3,6 @@ package br.pids.records.model;
 import java.time.LocalDate;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -31,7 +30,7 @@ public @Data class Comentario {
 	private int tipo;
 	
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne
 	@JoinColumn(name ="empresa_id_comentario")
 	private Empresa empresa; 
 	

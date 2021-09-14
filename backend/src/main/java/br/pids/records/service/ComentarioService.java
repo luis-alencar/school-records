@@ -9,7 +9,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import br.pids.records.dto.ComentarioDTO;
+import br.pids.records.dto.EmpresaDTO;
 import br.pids.records.model.Comentario;
+import br.pids.records.model.Empresa;
 import br.pids.records.repositories.ComentarioRepository;
 import br.pids.records.service.exception.ObjectNotFoundException;
 
@@ -33,6 +35,21 @@ public class ComentarioService {
 	public void delete(Long id) {
 		findById(id);
 		repository.deleteById(id);
+	}
+	
+	@Transactional
+	public ComentarioDTO update(Long id, ComentarioDTO dto) {
+		try {
+		Comentario entity = repository.getOne(id);
+		entity.setTitulo(dto.getTitulo());
+		entity.setData(dto.getData());
+		entity.setComentario(dto.getComentario());
+		entity.setNota(dto.getNota());
+		entity.setTipo(dto.getTipo());
+		return new ComentarioDTO(entity);
+		}catch (ObjectNotFoundException e) {
+			throw new ObjectNotFoundException("Objeto não encontrado");
+		}
 	}
 	
 }

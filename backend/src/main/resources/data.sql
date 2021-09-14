@@ -1,10 +1,10 @@
 /*
 
-INSERT INTO tb_empresa(nome,projeto) VALUES ('GRUPO 1','PROJETO DO GRUPO 1');
-INSERT INTO tb_empresa(nome,projeto) VALUES ('GRUPO 2','PROJETO DO GRUPO 2');
-INSERT INTO tb_empresa(nome,projeto) VALUES ('GRUPO 3','PROJETO DO GRUPO 3');
-INSERT INTO tb_empresa(nome,projeto) VALUES ('GRUPO 4','PROJETO DO GRUPO 4');
-INSERT INTO tb_empresa(nome,projeto) VALUES ('GRUPO 5','PROJETO DO GRUPO 5');
+INSERT INTO tb_empresa(nome,projeto) VALUES ('GRUPO 6','PROJETO DO GRUPO 6');
+INSERT INTO tb_empresa(nome,projeto) VALUES ('GRUPO 7','PROJETO DO GRUPO 7');
+INSERT INTO tb_empresa(nome,projeto) VALUES ('GRUPO 8','PROJETO DO GRUPO 8');
+INSERT INTO tb_empresa(nome,projeto) VALUES ('GRUPO 9','PROJETO DO GRUPO 9');
+INSERT INTO tb_empresa(nome,projeto) VALUES ('GRUPO 10','PROJETO DO GRUPO 10');
 
 
 INSERT INTO tb_aluno (email, nome, telefone,empresa_id_aluno) VALUES ('Luis@ueg.br', 'Luis Fernando',33666633,1);
