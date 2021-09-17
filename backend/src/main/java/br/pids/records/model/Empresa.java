@@ -1,7 +1,6 @@
 package br.pids.records.model;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -33,10 +32,10 @@ public @Data class Empresa {
 	}
 
 	@OneToMany(mappedBy = "empresa")
-	private List<Aluno> aluno = new ArrayList<>();
+	private Set<Aluno> aluno;
 	
 	@OneToMany(mappedBy = "empresa")
-	private List<Comentario> comentario = new ArrayList<>();
+	private Set<Comentario> comentario;
 	
 	
 	

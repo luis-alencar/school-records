@@ -1,12 +1,15 @@
 package br.pids.records.service;
 
 import java.util.Optional;
+import java.util.function.ObjDoubleConsumer;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.fasterxml.jackson.databind.deser.std.UntypedObjectDeserializer;
 
 import br.pids.records.dto.ComentarioDTO;
 import br.pids.records.dto.EmpresaDTO;
@@ -52,4 +55,10 @@ public class ComentarioService {
 		}
 	}
 	
+	public Comentario insertComentario(Comentario obj) {
+		return repository.save(obj);
+	}
+	public Comentario fromDTO(Comentario objDto) {
+		return new Comentario(objDto.getId(), objDto.getTitulo(), objDto.getData(), objDto.getNota(), objDto.getTipo(), objDto.getEmpresa());
+	}
 }

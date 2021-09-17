@@ -15,9 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import br.pids.records.dto.ComentarioDTO;
 import br.pids.records.dto.EmpresaDTO;
-import br.pids.records.model.Comentario;
 import br.pids.records.model.Empresa;
 import br.pids.records.service.EmpresaService;
 
