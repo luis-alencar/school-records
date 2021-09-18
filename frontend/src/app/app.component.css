@@ -144,7 +144,7 @@ header label span{
   margin-top: -10px !important;
 }
 
-main{
+/* main{
   margin-top: 85px;
   padding: 2rem 1.5rem;
   background: #f1f5f9;
@@ -158,8 +158,6 @@ main{
   margin-top: 1rem;
 }
 .card-single{
-  /* display: flex; */
-  /* justify-content: space-between; */
   background: #fff;
   padding: 2rem;
   border-radius: 2px;
@@ -179,7 +177,7 @@ main{
 .card-single:last-child div:first-child span{
   color: rgb(3, 1, 1);
 }
-/* busca de grupos */
+***** busca de grupos
 .search-group{
   border:1px solid #ccc;
   border-radius: 25px;
@@ -187,15 +185,15 @@ main{
   display: flex;
   align-items: center;
   overflow-x: hidden;
-  /* margin-top: 15px; */
+  ***** margin-top: 15px;
 }
 .search-group span{
   display: inline-block;
   padding: 0rem 1rem;
-  /* font-size: 1.5rem; */
+  **** font-size: 1.5rem;
 }
 .search-group input{
-  width: 885px; /*922-1200*/
+  width: 885px; ****922-1200
   height: 30px;
   padding: .5rem;
   border: none;
@@ -211,11 +209,11 @@ main{
 }
 .btn-search{
   font-size: 35px;
-}
+} */
 
 
 /* segunda parte */
-.recent-grid{
+/* .recent-grid{
   margin-top: 3.5rem;
   display: grid;
   grid-gap: 2rem;
@@ -235,12 +233,13 @@ main{
   align-items: center;
 
 }
-/* .card-body{
+ .card-body{
   padding: 1.1rem;
   align-items: center;
-} */
+}
+*/ alterar para cor da variavel /*
 .card-header button{
-  /* alterar para cor da variavel */
+
   background: #292839;
   border-radius: 7px;
   color: #fff;
@@ -271,7 +270,7 @@ td{
   right: 100%;
 }
 
-/* icones de ação*/
+*/ icones de ação /*
 td span{
   font-size: 1.25rem;
   display: inline-block;
@@ -281,10 +280,47 @@ td span{
 .table-responsive{
   width: 100%;
   overflow-x: auto;
-}
+} */
 
 @media only screen and (max-width: 1200px) {
-
+  .sidebar{
+    width: 70px;
+  }
+  .sidebar .sidebar-brand,
+  .sidebar li{
+    padding-left: 1rem;
+    text-align: center;
+  }
+  .sidebar li a{
+    padding-left: 0rem;
+  }
+  .sidebar .sidebar-brand h2 span:last-child,
+  .sidebar li a span:last-child{
+    display: none;
+  }
+  .main-content{
+    margin-left: 70px;
+  }
+  .main-content header{
+    width: calc(100% - 70px);
+    left: 70px;
+  }
+  .sidebar:hover{
+    width: 345px;
+    z-index: 200;
+  }
+  .sidebar:hover .sidebar-brand,
+  .sidebar:hover li{
+    padding-left: 2rem;
+    text-align: left;
+  }
+  .sidebar:hover li a{
+    padding-left: 1rem;
+  }
+  .sidebar:hover .sidebar-brand h2 span:last-child,
+  .sidebar:hover li a span:last-child{
+    display: inline;
+  }
 }
 
 @media only screen and (max-width: 960px) {
@@ -306,8 +342,49 @@ td span{
   .search-wrapper{
     display: none;
   }
+  .sidebar{
+    left: -100% !important;
+  }
+  header h2{
+    display: flex;
+    align-items: center;
+  }
+  header h2 label{
+    display: inline-block;
+    background: #292839;
+    padding-left: 0rem;
+    margin-right: 1rem;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  header h2 span{
+    text-align: center;
+    padding-right: 0rem;
+  }
+  .main-content{
+    width: 100%;
+    margin-left: 0rem;
+  }
+  header h2{
+    font-size: .8rem;
+  }
+  #nav-toggle:checked + .sidebar{
+    left: 0, im !important;
+    z-index: 100;
+    width: 345px;
+  }
+  header{
+    width: 100% !important;
+    left: 0 !important;
+  }
+
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 560px) {
   .cards{
     grid-template-columns: 100%;
   }
