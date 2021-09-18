@@ -2,6 +2,8 @@ package br.pids.records.dto;
 
 import java.io.Serializable;
 
+import com.sun.istack.NotNull;
+
 import br.pids.records.model.Empresa;
 import lombok.AllArgsConstructor;
 import lombok.Data;

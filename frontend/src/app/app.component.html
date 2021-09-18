@@ -1,9 +1,9 @@
 
 
-
+    <input type="checkbox" id="nav-toggle">
     <div class="sidebar">
       <div class="sidebar-brand">
-        <h2><span class="lab la-accusoft"></span>School Records</h2>
+        <h2><span class="lab la-readme"></span><span>School Records</span></h2>
       </div>
 
       <div class="sidebar-menu">
@@ -28,7 +28,7 @@
               <span>Conta</span></a>
           </li>
           <li>
-            <a href=""><span class="las la-igloo"></span>
+            <a href=""><span class="lab la-centos"></span>
               <span>{{ title }} app is running!</span></a>
           </li>
         </ul>
@@ -38,7 +38,7 @@
     <div class="main-content">
       <header>
         <h2>
-          <label for="">
+          <label for="nav-toggle">
             <span class = "las la-bars"></span>
           </label>
           Dashboard
@@ -63,16 +63,26 @@
 
       <main>
         <div class="cards"></div>
-        <div class="card-single">
-          <div>
-            <h1>54</h1>
-            <span>Grupos</span>
+        <div class="card-single">  <!--class="card-single"-->
+          <div class="card-sigle-title">
+            <h2>Grupos</h2>
+            <div>
+              <span class="las la-users"></span>
+            </div>
+            </div>
+            <!-- <div class="input-group mb-3">
+              <input type="search" class="form-control" placeholder=" Digite o nome do grupo">
+              <button class="submit" id="basic-addon2"><i class="las la-search fa-xs btn-search"></i></button>
+            </div> -->
+            <div class="search-group">
+              <span class="las la-search">
+                <input type="search" placeholder=" Digite o nome do grupo">
+              </span>
+            </div>
+
           </div>
-          <div>
-            <span class="las la-users"></span>
-          </div>
-        </div>
-        <div class="card-single">
+
+        <!-- <div class="card-single">
           <div>
             <h1>84</h1>
             <span>Alunos</span>
@@ -80,8 +90,8 @@
           <div>
             <span class="las la-users"></span>
           </div>
-        </div>
-        <div class="card-single">
+        </div> -->
+        <!-- <div class="card-single">
           <div>
             <h1>56</h1>
             <span>Comentários</span>
@@ -96,23 +106,53 @@
             <span>Conta</span>
           </div>
           <div>
-            <span class="las la-google-wallet"></span>
+            <span class="las la-shopping-bag"></span>
           </div>
         </div>
       </main>
-    </div>
+    </div> -->
 
 <!-- ///// -->
-<div class="recent-flex">
+<div class="recent-grid">
   <div class="projects">
     <div class="card">
       <div class="card-header">
-          <h2>Recent Projects</h2>
-          <button>See all <span class="la-arrow-right">
-          </span></button>
+          <h3></h3>
+          <button><span class="las la-plus-circle">
+          </span> Novo Grupo </button>
       </div>
       <div class="card-body">
-
+        <div class="table-responsive">
+          <table width="100%" class="">
+            <thead>
+              <tr class="titles">
+                <td>Nome</td>
+                <td>Projeto</td>
+                <td class="icon-action"></td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Grupo 1</td>
+                <td>Web Development</td>
+                <td class="float-right">
+                  <span class="las la-file-pdf"></span>
+                  <span class="las la-pen"></span>
+                  <span class="las la-trash-alt"></span>
+                </td>
+              </tr>
+              <tr>
+                <td>Grupo 2</td>
+                <td>Shop App</td>
+                <td class="float-right">
+                  <span class="las la-file-pdf"></span>
+                  <span class="las la-pen"></span>
+                  <span class="las la-trash-alt"></span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
       </div>
     </div>
   </div>
