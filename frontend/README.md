@@ -1,7 +1,5 @@
 # FrontEnd
 
-
-
 ## :rocket: Começando
 ``` bash
   # Instalando pacotes:

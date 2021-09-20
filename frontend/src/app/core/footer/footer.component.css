@@ -1,0 +1,14 @@
+footer {
+  position: absolute;
+  bottom: 0;
+  background-color: #E1E1EA;
+  color: #FFF;
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+}
+.copyright{
+  color: #1C1C1C;
+  size: 2rem;
+}

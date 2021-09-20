@@ -1,0 +1,55 @@
+<nav class="navbar">
+  <div class="container">
+    <div class="p-grid">
+      <div class="p-col-12">
+        <a routerLink="#" class="navbar-toggle">
+          <!-- <a href="javascript:;" class="navbar-toggle" (click)="exibindoMenu = !exibindoMenu"> -->
+            <a href="javascript:;" class="navbar-toggle" >
+            <!-- <i class="pi pi-bars fa-xs" style="margin-left: -32px; font-size: 1.5rem"></i> -->
+          </a>
+        </a>
+      </div>
+    </div>
+  </div>
+  <ul class="navbar-menu" >
+    <!-- <ul class="navbar-menu" [hidden]="!exibindoMenu"> -->
+    <div >
+      <li class="imagem">
+        <a routerLink="/dashboard" >
+          <img src="../../../assets/logo_branco.png" style=" height: 50px; margin-top: -5rem; margin-left: 0.8rem;"  alt="">
+        </a>
+      </li>
+      <li class="navbar-menuitem" routerLinkActive="ativo" >
+        <a routerLink="/dashboard" style="color: #FF9000;">
+          <i class="pi pi-home" style="color: #FFF; margin-right: 0.1rem;"></i> Dashboard
+        </a>
+      </li>
+      <li class="navbar-menuitem" routerLinkActive="ativo" >
+        <a routerLink="/cursos" style="color: #FF9000;">
+          <i class="pi pi-tags" style="color: #FFF; margin-right: 0.1rem;"></i> Cursos
+        </a>
+      </li>
+      <li class="navbar-menuitem" routerLinkActive="ativo">
+        <a routerLink="/disciplinas" style="color: #FF9000;">
+          <i class="pi pi-bookmark" style="color: #FFF; margin-right: 0.1rem;"></i> Disciplinas
+        </a>
+      </li>
+      <li class="navbar-menuitem" routerLinkActive="ativo">
+        <a routerLink="#" style="color: #FF9000;">
+          <i class="pi pi-sitemap" style="color: #FFF; margin-right: 0.1rem;"></i> Turmas
+        </a>
+      </li>
+      <li class="navbar-menuitem" routerLinkActive="ativo">
+        <a routerLink="/lancamentos" style="color: #FF9000;">
+          <i class="pi pi-user" style="color: #FFF; margin-right: 0.1rem;"></i> Alunos
+        </a>
+      </li>
+      <li class="navbar-menuitem" routerLinkActive="ativo">
+        <a routerLink="#" style="color: #FF9000;">
+          <i class="pi pi-users" style="color: #FFF; margin-right: 0.1rem;"></i> Grupos
+        </a>
+      </li>
+    </div>
+  </ul>
+
+</nav>

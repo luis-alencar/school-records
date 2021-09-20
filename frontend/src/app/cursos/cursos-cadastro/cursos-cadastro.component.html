@@ -1,0 +1,33 @@
+<div class="container" style="margin-left: 15.2rem">
+  <form #f="ngForm" autocomplete="off" (ngSubmit)="salvar(f)">
+    <div class="p-grid">
+      <div class="p-col-12">
+        <h1>{{ editando ? 'Altera ' : 'Registrar' }} Curso</h1>
+      </div>
+
+      <div class="p-col-6 p-md-4 p-fluid">
+        <label>Descrição: </label>
+        <input pInputText type="text" name="descricao" [(ngModel)]="curso.descricao" #descricao="ngModel" required minlength="5">
+
+        <app-message [control]="descricao" error="required" text="Informe a descrilçai"></app-message>
+        <app-message [control]="descricao" error="minlength" text="Mínimo de {{ descricao.errors?.minlength?.requiredLength }} caracteres"></app-message>
+      </div>
+
+      <div class="p-col-6 p-md-4 p-fluid">
+        <label>Localidade</label>
+        <input pInputText type="text" name="logradouro"  [(ngModel)]="curso.localidade" #localidade="ngModel" required>
+
+        <app-message [control]="localidade" error="required"  text="Informe a localidade"></app-message>
+      </div>
+      <div class="p-col-6 p-md-4 p-fluid">
+        <label>Status: </label>
+        <p-dropdown name="ativo" [options]="ativos"  placeholder="Selecione"  [(ngModel)]="curso.ativo"></p-dropdown>
+      </div>
+
+      <div class="p-col-4" style="margin-left: 56.5rem">
+        <a routerLink="/cursos"><i class="pi pi-upload"></i> Voltar para a pesquisa</a>
+        <button pButton type="submit" [disabled]="f.invalid"   label="Cadastrar" style="margin-left: 0.5rem; background-color: #FF9000; border: 1px solid #FF9000;"></button>
+      </div>
+    </div>
+  </form>
+</div>

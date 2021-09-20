@@ -1,0 +1,77 @@
+<div class="container">
+  <form autocomplete="off" (ngSubmit)="pesquisar()">
+    <div class="p-grid" style="margin-top: -2.5rem">
+      <div class="p-col-12">
+        <h1>Consultar Cursos</h1>
+      </div>
+      <div class="p-col-12 p-md-4 p-fluid">
+        <label>Descrição:</label>
+        <input pInputText type="text" name="descricao" [(ngModel)]="filtro.descricao">
+      </div>
+      <div class="p-col-12 p-md-4 p-fluid">
+        <label>Localidade:</label>
+        <input pInputText type="text" name="localidade"  [(ngModel)]="filtro.localidade">
+      </div>
+
+      <div class="p-col-12 p-md-4" style="margin-top: 1.2rem; ">
+        <div class="botao">
+          <button pButton type="submit" class="p-button-info" icon="pi pi-search" style="color: #FFF;" label="Pesquisar"></button>
+          <button pButton type="submit" routerLink="/cursos/novo" icon="pi pi-plus-circle" style="color: #FFF; border: 1px solid #FF9000; background: #FF9000;" label="Cadastrar"></button>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <div class="p-grid" style="margin-top: 1.5rem; ">
+    <div class="p-col-12">
+      <p-table [value]="cursos" [responsive]="true" [paginator]="true" [rows]="filtro.itensPorPagina" [lazy]="true" [totalRecords]="totalRegistros"
+        (onLazyLoad)="aoMudarPagina($event)" #tabela>
+        <ng-template pTemplate="emptymessage">
+          <tr>
+            <td colspan="5">
+              Nenhuma curso encontrado
+            </td>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Descrição</th>
+            <th>Localidade</th>
+            <th>Data Cadastro</th>
+            <th>Status</th>
+            <th class="col-acoes-header"></th>
+          </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-curso>
+          <tr>
+            <td>
+              <span class="p-column-title">Descrição</span>
+              {{ curso.descricao }}
+            </td>
+            <td>
+              <span class="p-column-title">Localidade</span>
+              {{ curso.localidade }}
+            </td>
+            <td>
+              <span class="p-column-title">Data Cadastro</span>
+              {{ curso.dataCadastro }}
+            </td>
+            <td>
+              <span class="p-column-title">Status</span>
+              <a href="javascript:;" [pTooltip]="curso.ativo ? 'Desativar' : 'Ativar'" tooltipPosition="top"
+                  (click)="alternarStatus(curso)">
+                {{ curso.ativo ? 'Ativo' : 'Inativo' }}
+              </a>
+            </td>
+            <td class="col-acoes">
+              <span class="p-column-title"></span>
+              <a pButton icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top" [routerLink]="['/cursos', curso.codigo]"></a>
+              <button pButton icon="pi pi-trash" pTooltip="Excluir" class="p-button-danger" tooltipPosition="top" (click)="confirmarExclusao(curso)"></button>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+</div>
