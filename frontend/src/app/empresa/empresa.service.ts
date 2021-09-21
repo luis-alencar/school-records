@@ -17,4 +17,16 @@ export class EmpresaService {
     tap((lista)=> console.log('GET/EMPRESA',lista))
     );
     }
+
+    public criar(empresa: Empresa):Observable<Empresa[]>{
+    return this.http.post<Empresa[]>(this.API, empresa).pipe(
+      tap((empresa)=> console.log('Criar Empresa.SERVICE ok', empresa))
+    )
+  }
+
+  public delete(id: number): Observable<Empresa>{
+    return this.http.delete<Empresa>(this.API).pipe(
+      tap((empresa)=> console.log('Deletar EMPRESA.SERVICE ok', empresa))
+    )
+  }
 }
