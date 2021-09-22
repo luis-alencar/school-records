@@ -16,16 +16,22 @@ export class EmpresaService {
     return this.http.get<Empresa[]>(this.API + 'empresas').pipe(
     tap((lista)=> console.log('GET/EMPRESA',lista))
     );
-    }
+  }
 
-    public criar(empresa: Empresa):Observable<Empresa[]>{
+  getById(id:number):Observable<Empresa[]>{
+    return this.http.get<Empresa[]>(this.API+id).pipe(
+      tap((empresa)=> console.log('GET BY ID ', empresa))
+    );
+  }
+
+  public criar(empresa: Empresa):Observable<Empresa[]>{
     return this.http.post<Empresa[]>(this.API, empresa).pipe(
       tap((empresa)=> console.log('Criar Empresa.SERVICE ok', empresa))
     )
   }
 
   public delete(id: number): Observable<Empresa>{
-    return this.http.delete<Empresa>(this.API).pipe(
+    return this.http.delete<Empresa>(this.API+'empresas/'+id).pipe(
       tap((empresa)=> console.log('Deletar EMPRESA.SERVICE ok', empresa))
     )
   }

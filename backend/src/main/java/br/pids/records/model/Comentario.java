@@ -11,6 +11,7 @@ import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.sun.istack.NotNull;
 
 import lombok.AllArgsConstructor;
@@ -29,8 +30,8 @@ public @Data class Comentario {
 	
 	@NotNull
 	private String titulo;
-	
-	//@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
+
+	@JsonFormat(pattern = "dd-MM-yyyy")
 	private LocalDate data;
 	
 	@Lob
@@ -38,7 +39,6 @@ public @Data class Comentario {
 	private String comentario;
 	private int nota;
 	private int tipo;
-	
 	
 	@ManyToOne
 	@JoinColumn(name ="empresa_id_comentario", referencedColumnName = "id")

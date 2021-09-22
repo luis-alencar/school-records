@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
+  { path: '', redirectTo:'/empresas', pathMatch:'full'},
   {path: 'empresas', component: EmpresaComponent}
 ];
 

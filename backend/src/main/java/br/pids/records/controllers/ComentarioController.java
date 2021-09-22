@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.pids.records.dto.ComentarioDTO;
 import br.pids.records.model.Comentario;
-import br.pids.records.model.Empresa;
 import br.pids.records.service.ComentarioService;
 import br.pids.records.service.EmpresaService;
 
@@ -46,10 +45,8 @@ public class ComentarioController {
 	}
 	
 	@PostMapping
-	public Comentario incluir(@RequestBody Comentario comentario, @PathVariable Long id) {
-		Empresa obj = empresaService.findById(id); 
-		return service.insertComentario(comentario, obj);
+	public Comentario incluir(@RequestBody Comentario comentario) {
+		return service.insertComentario(comentario);
 	}
-	//criar um obj empresa setar em um comentario. 
 
 }

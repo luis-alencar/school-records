@@ -6,11 +6,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EmpresaComponent } from './empresa/empresa.component';
 import { EmpresaService } from './empresa/empresa.service';
+import { ComentarioComponent } from './comentario/comentario.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EmpresaComponent
+    EmpresaComponent,
+    ComentarioComponent
   ],
   imports: [
     BrowserModule,

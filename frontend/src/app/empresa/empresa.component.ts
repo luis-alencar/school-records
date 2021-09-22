@@ -2,7 +2,7 @@ import { EmpresaService } from './empresa.service';
 import { Component, OnInit } from '@angular/core';
 import { Empresa } from './empresa';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-empresa',
@@ -11,21 +11,25 @@ import { Router } from '@angular/router';
 })
 export class EmpresaComponent implements OnInit {
   Empresa: Empresa[] = [];
-  public empresaValue!: FormGroup;
+  empresaValue!: FormGroup;
 
   constructor(
-    private fb: FormBuilder,
+    //private fb: FormBuilder,
     private router: Router,
+    private activeteRoute: ActivatedRoute,
     private empresaService: EmpresaService) { }
 
   ngOnInit(): void {
     this.ListAll();
 
-    this.empresaValue = this.fb.group({
-      id:[''],
-      nome:[''],
-      projeto:['']
-    })
+    const id = this.activeteRoute.snapshot.params['id'];
+    console.log('ID ', id)
+
+    // this.empresaValue = this.fb.group({
+    //   id:[''],
+    //   nome:[''],
+    //   projeto:['']
+    // })
   }
 
   private ListAll() {
@@ -35,11 +39,19 @@ export class EmpresaComponent implements OnInit {
     });
   }
 
-
-
-  private criarEmpresa(){
-    this.empresaService.criar(this.empresaValue).subscribe((result) => {
-    });
-    this.empresaValue.reset();
+  criarEmpresa(){
+     this.empresaService.criar(this.empresaValue).subscribe((result) => {
+     //});
+    //this.empresaValue.reset();
   }
+
+
+  removerEmpresa(id: number) {
+      this.empresaService.delete(id).subscribe((result) => {
+        window.alert('Tarefa removida com sucesso!');
+        this.ListAll();
+        location.assign('/empresas')
+      });
+  }
+
 }

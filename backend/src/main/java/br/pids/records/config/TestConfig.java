@@ -12,7 +12,7 @@ import br.pids.records.repositories.EmpresaRepository;
 
 @Configuration
 @Profile("test")
-public class TestConfig implements CommandLineRunner{
+public class TestConfig implements CommandLineRunner {
 
 	@Autowired
 	private EmpresaRepository empresaRepository;
